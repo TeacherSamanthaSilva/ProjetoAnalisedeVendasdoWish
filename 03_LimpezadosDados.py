@@ -54,4 +54,3 @@ categorical_cols
 
 numerical_cols
 
-#2  Análise exploratória dos dados
