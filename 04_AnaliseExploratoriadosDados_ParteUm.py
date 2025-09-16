@@ -66,3 +66,5 @@ for col in categorical_cols:
         plt.xticks(rotation=90)
         plt.suptitle(col,fontsize=20)
         plt.show()
+
+numerical_cols
