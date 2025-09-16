@@ -133,3 +133,5 @@ plt.legend()
 df_products.groupby(["success", "badges_count"]).count()[["title"]].pivot_table(index="success", columns="badges_count").fillna(0)
 
 df_products.groupby(["success", "badge_product_quality"]).count()[["title"]].pivot_table(index="success", columns="badge_product_quality").fillna(0)
+
+df_products.groupby(["success", "badge_fast_shipping"]).count()[["title"]].pivot_table(index="success", columns="badge_fast_shipping").fillna(0)
