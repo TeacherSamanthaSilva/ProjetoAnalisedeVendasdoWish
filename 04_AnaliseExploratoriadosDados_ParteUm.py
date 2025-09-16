@@ -77,3 +77,5 @@ for col in numerical_cols:
     plt.show()
 
 df_products["units_sold"].value_counts()
+
+df_products
