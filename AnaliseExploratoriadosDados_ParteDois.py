@@ -111,3 +111,12 @@ df_products["success"] = 0
 df_products.loc[df_products["income"] > 7000, "success"] = 1
 
 df_products.columns
+
+df_products["discount"] = df_products["retail_price"] - df_products["price"]
+
+fig, ax = plt.subplots(figsize=(20, 6))
+sns.distplot(df_products.loc[df_products["success"] == 1, "discount"], label="1")
+sns.distplot(df_products.loc[df_products["success"] == 0, "discount"], label="0")
+plt.legend()
+
+df_products.head(1)
