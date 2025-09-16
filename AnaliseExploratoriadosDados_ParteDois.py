@@ -120,3 +120,5 @@ sns.distplot(df_products.loc[df_products["success"] == 0, "discount"], label="0"
 plt.legend()
 
 df_products.head(1)
+
+df_products.loc[df_products["success"] == 0, "uses_ad_boosts"].value_counts()
