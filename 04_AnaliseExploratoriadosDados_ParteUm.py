@@ -68,3 +68,10 @@ for col in categorical_cols:
         plt.show()
 
 numerical_cols
+
+for col in numerical_cols:
+    f, axes = plt.subplots(1,1,figsize=(18,4))
+    sns.histplot(x=col, data=df_products)
+    plt.xticks(rotation=90)
+    plt.suptitle(col,fontsize=20)
+    plt.show()
