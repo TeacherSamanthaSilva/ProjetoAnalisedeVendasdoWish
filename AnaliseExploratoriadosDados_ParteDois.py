@@ -131,3 +131,5 @@ sns.distplot(df_products.loc[df_products["success"] == 0, "rating"], label="0", 
 plt.legend()
 
 df_products.groupby(["success", "badges_count"]).count()[["title"]].pivot_table(index="success", columns="badges_count").fillna(0)
+
+df_products.groupby(["success", "badge_product_quality"]).count()[["title"]].pivot_table(index="success", columns="badge_product_quality").fillna(0)
