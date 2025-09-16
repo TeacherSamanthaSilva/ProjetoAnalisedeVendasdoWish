@@ -172,3 +172,11 @@ pd.Series(tags).value_counts().head(5)
 shipping_is_express
 
 df_products.groupby(["success", "shipping_is_express"]).count()[["title"]].pivot_table(index="success", columns="shipping_is_express").fillna(0)
+
+
+df_products["discount"] = df_products["retail_price"] - df_products["price"]
+
+fig, ax = plt.subplots(figsize=(20, 5))
+sns.distplot(df_products.loc[df_products["success"] == 1, "countries_shipped_to"], label="1")
+sns.distplot(df_products.loc[df_products["success"] == 0, "countries_shipped_to"], label="0")
+plt.legend()
