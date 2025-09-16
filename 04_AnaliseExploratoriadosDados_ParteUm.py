@@ -55,3 +55,5 @@ categorical_cols
 numerical_cols
 
 categorical_cols
+
+df_products["tags"]  # Esta precisará de um tratamento
