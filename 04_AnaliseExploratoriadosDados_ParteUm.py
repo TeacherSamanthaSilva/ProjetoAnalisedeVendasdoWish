@@ -84,3 +84,5 @@ df_products.loc[df_products["units_sold"] < 10, "units_sold"] = 10
 df_products["units_sold"].value_counts()
 
 df_products["units_sold"].median() 
+
+df_products["units_sold"].mean() 
