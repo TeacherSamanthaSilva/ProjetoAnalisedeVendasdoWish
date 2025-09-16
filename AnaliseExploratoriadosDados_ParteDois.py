@@ -122,3 +122,10 @@ plt.legend()
 df_products.head(1)
 
 df_products.loc[df_products["success"] == 0, "uses_ad_boosts"].value_counts()
+
+df_products.loc[df_products["success"] == 1, "uses_ad_boosts"].value_counts()
+
+fig, ax = plt.subplots(figsize=(20, 6))
+sns.distplot(df_products.loc[df_products["success"] == 1, "rating"], label="1", color="blue")
+sns.distplot(df_products.loc[df_products["success"] == 0, "rating"], label="0", color="orange")
+plt.legend()
