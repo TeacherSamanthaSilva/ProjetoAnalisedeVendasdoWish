@@ -158,3 +158,8 @@ ax[0].imshow(wordcloud_success)
 ax[1].imshow(wordcloud_fail)
 
 plt.show()
+
+tags = []
+for list_tags in df_success_tags["tags"].values:
+    tags += list_tags.split(",")
+pd.Series(tags).value_counts().head(5)
