@@ -57,3 +57,12 @@ numerical_cols
 categorical_cols
 
 df_products["tags"]  # Esta precisará de um tratamento
+
+
+for col in categorical_cols:
+    if col not in ["title", "tags"]:
+        f, axes = plt.subplots(1,1,figsize=(18,5))
+        sns.countplot(x=col, data = df_products)
+        plt.xticks(rotation=90)
+        plt.suptitle(col,fontsize=20)
+        plt.show()
