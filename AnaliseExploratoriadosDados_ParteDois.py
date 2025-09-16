@@ -129,3 +129,5 @@ fig, ax = plt.subplots(figsize=(20, 6))
 sns.distplot(df_products.loc[df_products["success"] == 1, "rating"], label="1", color="blue")
 sns.distplot(df_products.loc[df_products["success"] == 0, "rating"], label="0", color="orange")
 plt.legend()
+
+df_products.groupby(["success", "badges_count"]).count()[["title"]].pivot_table(index="success", columns="badges_count").fillna(0)
