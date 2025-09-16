@@ -106,3 +106,8 @@ sns.distplot(df_products["income"])
 df_products["income"].median()
 
 df_products["income"].mean()
+
+df_products["success"] = 0
+df_products.loc[df_products["income"] > 7000, "success"] = 1
+
+df_products.columns
