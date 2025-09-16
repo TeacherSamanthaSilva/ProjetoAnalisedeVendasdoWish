@@ -135,3 +135,5 @@ df_products.groupby(["success", "badges_count"]).count()[["title"]].pivot_table(
 df_products.groupby(["success", "badge_product_quality"]).count()[["title"]].pivot_table(index="success", columns="badge_product_quality").fillna(0)
 
 df_products.groupby(["success", "badge_fast_shipping"]).count()[["title"]].pivot_table(index="success", columns="badge_fast_shipping").fillna(0)
+
+df_products["tags_count"] = df_products["tags"].apply(lambda x: len(x.split(",")))
