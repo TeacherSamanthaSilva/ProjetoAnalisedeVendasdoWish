@@ -137,3 +137,10 @@ df_products.groupby(["success", "badge_product_quality"]).count()[["title"]].piv
 df_products.groupby(["success", "badge_fast_shipping"]).count()[["title"]].pivot_table(index="success", columns="badge_fast_shipping").fillna(0)
 
 df_products["tags_count"] = df_products["tags"].apply(lambda x: len(x.split(",")))
+
+df_products["discount"] = df_products["retail_price"] - df_products["price"]
+
+fig, ax = plt.subplots(figsize=(20, 5))
+sns.distplot(df_products.loc[df_products["success"] == 1, "tags_count"], label="1")
+sns.distplot(df_products.loc[df_products["success"] == 0, "tags_count"], label="0")
+plt.legend()
