@@ -163,3 +163,10 @@ tags = []
 for list_tags in df_success_tags["tags"].values:
     tags += list_tags.split(",")
 pd.Series(tags).value_counts().head(5)
+
+tags = []
+for list_tags in df_fail_tags["tags"].values:
+    tags += list_tags.split(",")
+pd.Series(tags).value_counts().head(5)
+
+shipping_is_express
