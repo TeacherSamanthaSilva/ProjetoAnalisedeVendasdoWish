@@ -170,3 +170,5 @@ for list_tags in df_fail_tags["tags"].values:
 pd.Series(tags).value_counts().head(5)
 
 shipping_is_express
+
+df_products.groupby(["success", "shipping_is_express"]).count()[["title"]].pivot_table(index="success", columns="shipping_is_express").fillna(0)
