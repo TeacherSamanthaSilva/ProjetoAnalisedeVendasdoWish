@@ -144,3 +144,17 @@ fig, ax = plt.subplots(figsize=(20, 5))
 sns.distplot(df_products.loc[df_products["success"] == 1, "tags_count"], label="1")
 sns.distplot(df_products.loc[df_products["success"] == 0, "tags_count"], label="0")
 plt.legend()
+
+df_success_tags = df_products.loc[df_products["success"] == 1]
+word_string=" ".join(df_success_tags['tags'].str.lower())
+wordcloud_success = WordCloud(stopwords=STOPWORDS).generate(word_string)
+
+df_fail_tags = df_products.loc[df_products["success"] == 0]
+word_string=" ".join(df_fail_tags['tags'].str.lower())
+wordcloud_fail = WordCloud(stopwords=STOPWORDS).generate(word_string)
+
+fig, ax = plt.subplots(1, 2, figsize=(25,20))
+ax[0].imshow(wordcloud_success)
+ax[1].imshow(wordcloud_fail)
+
+plt.show()
